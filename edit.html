@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <link href="prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./font/font.css">
+    <script>
+     window.addEventListener('load', function() {
+    setTimeout(function() {
+        var startpage = document.querySelector('.startpage');
+        var logoimg = document.getElementById("logoimg");
+
+        startpage.style.transitionDuration = '3s';
+        startpage.style.opacity = '0';    
+        setTimeout( function(){
+        startpage.style.display= 'none'
+    },0); 
+    }, 0);
+});
+    </script>
+    <title>ميكروتكنيك</title>
+</head>
+<body dir="rtl">
+    <div class="background"></div>
+    <div class="linergradinetbackground"></div>
+    <div class="startpage"> <div><img src="logo.png" alt=""><br><h1>ميكروتكنيك MikroTechnique </h1>
+        <h4> ميكروتكنيك لتصميم المواقع الإلكترونية و صفحات الهوت سبوت و تطبيقات الموبايل</h4>
+    </div></div>
+    <div class="main" >
+    <div class="editor">
+        <div class="logo">
+            <div><h1>ميكرو تكنيك MikroTechnique </h1>
+                <h4> ميكروتكنيك لتصميم المواقع الإلكترونية و صفحات الهوت سبوت و تطبيقات الموبايل</h4>  لتحميل  الصفحة من قناة التليغرام اضغط هنا 
+                <a target="_blank" href="https://t.me/MikroTechnique/" class=""><i class="fa fa-telegram" ></i>تليغرام</a>
+                <br>
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=61554817926320" class=""><i class="fa fa-facebook"></i>فيسبوك</a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCQdDU96Zi5eFtcylMd671KQ" class=""><i class="fa fa-youtube"></i>يوتيوب</a>
+            
+            
+            
+            </div>
+            
+            <div id="logoimg"><img src="logo.png" alt=""></div>
+        </div>
+        <div class="form">
+    <form id="config-form">
+        <input type="checkbox" name="" id="advanced">
+        <label for="advanced">الوضع المتقدم</label><br>
+        <label for="network-name">اسم الشبكة:</label>
+        <input value="ميكروتكنيك" type="text" name="network-name" id="network-name"><br>
+        <label for="service-number">رقم الخدمة:</label>
+        <input value="777777777" type="text" name="service-number" id="service-number"><br>
+
+        <label for="login-type">نوع تسجيل الدخول:</label>
+        <select type="text" name="login-type" id="login-type">
+            <option value="user" selected> أسم مستخدم فقط </option>
+            <option value="both"> أسم مستخدم + كلمة مرور </option>
+            <option value="passwordAsUser">كلمة مرور متشابهة مع اسم المستخدم</option>
+        </select>
+        <br>
+        <label class="advanced" for="speed-select">هل يوجد في صفحتك تحديد سرعة </label>
+        <select class="advanced" type="text" name="speed-select" id="speed-select">
+            <option value="0" selected> لا </option>
+            <option value="1"> نعم </option>
+        </select>
+        <div class="advanced" id="sv">
+            <label  for="speed-var"> أسم متغير تحديد السرعة :</label>
+            <input value="domain" type="text" name="speed-var" id="speed-var">
+            <br>
+            <label for="speed-option"> كود خيارات السرعة :</label><br>  
+            <pre dir="ltr" id="speed-option" contenteditable class="language-html" data-linenumber="0">   
+            </pre>
+            <br>
+        </div>
+        <label for="news-line"> محتوى شريط الأخبار المتحرك :</label><br>
+        <textarea name="news-line" id="news-line">
+مرحبا  بكم  في شبكتنا * تذكر ان الله ينظر إليك فلا تجعله أهون الناظرين إليك
+        </textarea>
+        <br>
+        <label for="input-autocomplete">أكمال تلقائي بالمتصفح</label>
+        <select type="text" name="input-autocomplete" id="input-autocomplete">
+            <option value="on" selected> نعم </option>
+            <option value="off"> لا </option>
+        </select>
+        <br>
+        <label for="input-type">نوع لوحة المفاتيح </label>
+        <select type="text" name="input-type" id="input-type">
+            <option value="text" selected> حروف وارقام </option>
+            <option value="tel"> ارقام فقط </option>
+        </select>
+        <br>
+        <label for="input-rm-white-spaces">حذف المسافات </label>
+        <select type="text" name="input-rm-white-spaces" id="input-rm-white-spaces">
+            <option value="1" selected> نعم </option>
+            <option value="0"> لا </option>
+        </select>
+        <br>
+        <label for="input-to-lower">تحويل الحروف الأنجليزية الى صغيره</label>
+        <select type="text" name="input-to-lower" id="input-to-lower">
+            <option value="1"> نعم </option>
+            <option value="0" selected> لا </option>
+        </select>
+        <br>
+        <label for="input-to-upper">تحويل الحروف  الأنجليزية الى كبيرة</label>
+        <select type="text" name="input-to-upper" id="input-to-upper">
+            <option value="1"> نعم </option>
+            <option value="0" selected> لا  </option>
+        </select>
+        <br>
+        <label for="show-date-field">اظهار الوقت و التاريخ</label>
+        <select type="text" name="show-date-field" id="show-date-field">
+            <option value="true" selected> نعم </option>
+            <option value="false"> لا </option>
+        </select>
+        <br>
+        <label for="loan-button">أظهار زر الخدمات</label>
+        <select type="text" name="loan-button" id="loan-button">
+            <option value="true" > نعم </option>
+            <option value="false" selected> لا </option>
+        </select>
+        <br>
+        <label for="loan-text"> الخدمات</label>
+        <textarea name="loan-text" id="loan-text">يوجد لدينا خدمة توفير ....</textarea>
+        <br>
+        <label for="price-button">أظهار زر اسعار الكروت</label>
+        <select type="text" name="price-button" id="price-button">
+            <option value="true" selected> نعم </option>
+            <option value="false"> لا </option>
+        </select>
+        <br>
+        <label for="sell-point-button">أظهار زر نقاط البيع</label>
+        <select type="text" name="sell-point-button" id="sell-point-button">
+            <option value="true" selected> نعم </option>
+            <option value="false"> لا </option>
+        </select>
+        <br>
+        <label for="try-count"> حضر المحاولات الخاطئة بعد</label>
+        <select type="text" name="try-count" id="try-count">
+            <option value="5" selected> خمس محاولات </option>
+            <option value="10"> 10 محاولات </option>
+        </select>
+        <br>
+        <label for="block-time">مدة الحضر </label>
+        <select type="text" name="block-time" id="block-time">
+            <option value="2" selected> 2 دقيقة </option>
+            <option value="3">دقيقة 3 </option>
+            <option value="4"> دقيقة 4 </option>
+            <option value="5"> 5 دقيقة </option>
+        </select>
+        <br>
+        <label for="redirect-to-esterahah"> رابط الأستراحة </label>
+        <input type="text" name="redirect-to-esterahah" id="redirect-to-esterahah">
+        <br>
+        <label for="redirect-to-mobasher"> رابط البث المباشر</label>
+        <input type="text" name="redirect-to-mobasher" id="redirect-to-mobasher">
+        <br>
+        <h2 > أسعار الكروت </h2>
+        <table id="profiles">
+            <thead>
+                <tr>
+                    <th>السعر</th>
+                    <th>الوقت</th>
+                    <th>التحميل</th>
+                    <th>الصلاحية</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" value="100  ريال" ></td>
+                    <td><input type="text" value="3 ساعات" ></td>
+                    <td><input type="text"  value="250 ميجا"> </td>
+                    <td><input type="text" value="3 أيام" ></td>
+                </tr>
+                <tr>
+                    <td><input type="text" ></td>
+                    <td><input type="text" ></td>
+                    <td><input type="text"></td>
+                    <td><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td><input type="text" ></td>
+                    <td><input type="text" ></td>
+                    <td><input type="text"></td>
+                    <td><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td><input type="text" ></td>
+                    <td><input type="text" ></td>
+                    <td><input type="text"></td>
+                    <td><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td><input type="text" ></td>
+                    <td><input type="text" ></td>
+                    <td><input type="text"></td>
+                    <td><input type="text" ></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><button type="button">اضافة صف</button></td>
+                </tr>
+            </tfoot>
+            
+        </table>
+        <br>
+        <h2 > نقاط البيع :</h2>
+        <table id="sellpoint">
+            <thead>
+                <tr>تتوفر الكروت لدى النقاط التالية</tr>
+            </thead>
+            <tbody>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text" value="نقطة بيع"> </td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+                <tr><td><input type="text"></td></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><button type="button">اضافة صف</button></td>
+                </tr>
+            </tfoot>
+        </table>
+        <br>
+        <input type="submit" value="حفظ البيانات">
+    </form></div></div>
+    <div class="loginpage">
+        
+        <iframe id="iflogin" src="login/index.html" frameborder="0"></iframe>
+        <div class="camira"></div>
+        <div class="button1"></div>
+        <div class="button2"></div>
+        <div class="button3"></div>
+        <div class="button3"></div>
+    </div>
+    <div class="statuspage">
+        <iframe id="ifstatus" src="status/index.html" frameborder="0"></iframe>
+        <div class="camira"></div>
+        <div class="button1"></div>
+        <div class="button2"></div>
+        <div class="button3"></div>
+        <div class="button3"></div>
+    </div>
+</div>
+
+    <script src="prism.js"></script>
+
+<script>
+// عندما يتم تحميل الصفحة
+window.addEventListener('DOMContentLoaded', (event) => {
+document.getElementById('speed-option').innerHTML=`<div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span> <span style="color: #9cdcfe;">selected</span> <span style="color: #9cdcfe;">disabled</span> <span style="color: #9cdcfe;">hidden</span><span style="color: #808080;">&gt;</span>أختيار سرعة الإنترنت<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span> <span style="color: #808080;">&gt;</span>سرعة أفتراضية <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"128K/512K"</span><span style="color: #808080;">&gt;</span>سرعة منخفضة 512 <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"256K/1024K"</span><span style="color: #808080;">&gt;</span>سرعة عادية 1 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"512K/2048K"</span><span style="color: #808080;">&gt;</span>سرعة متوسطة 2 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"1024K/4096K"</span><span style="color: #808080;">&gt;</span>سرعة عالية جدا 4 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div></div>`;
+const networkNameInput = document.getElementById('network-name');
+const serviceNumberInput = document.getElementById('service-number');
+const loginTypeInput = document.getElementById('login-type');
+const speedSelectInput = document.getElementById('speed-select');
+const speedVarInput = document.getElementById('speed-var');
+const SpeedOptionInput = document.getElementById('speed-option');
+const newsLineInput = document.getElementById('news-line');
+const inputAutocompleteInput = document.getElementById('input-autocomplete');
+const inputTypeInput = document.getElementById('input-type');
+const inputRmWhiteSpacesInput = document.getElementById('input-rm-white-spaces');
+const inputOnlyNumbersInput = document.getElementById('input-only-numbers');
+const inputNoNumbersInput = document.getElementById('input-no-numbers');
+const inputOnlyAlphanumericInput = document.getElementById('input-only-alphanumeric');
+const enableHotCookieInput = document.getElementById('enable-hot-cookie');
+const enableHotBlockerInput = document.getElementById('enable-hot-blocker');
+const clearRouterCookieInput = document.getElementById('clear-router-cookie');
+const clearHotCookieInput = document.getElementById('clear-hot-cookie');
+const blockTimeInput = document.getElementById('block-time');
+const tryCountInput = document.getElementById('try-count');
+const priceButtonInput = document.getElementById('price-button');
+const sellPointButtonInput = document.getElementById('sell-point-button');
+const showDateFieldInput = document.getElementById('show-date-field');
+const loanButtonInput = document.getElementById('loan-button');
+const loanTextInput = document.getElementById('loan-text');
+const redirectToEsterahahInput = document.getElementById('redirect-to-esterahah');
+const redirectToMobasherInput = document.getElementById('redirect-to-mobasher');
+ profilesTable = document.getElementById('profiles');
+ sellpointtable = document.getElementById('sellpoint');
+var profilesarray = [];
+var sellarray= [];
+var prows = profilesTable.querySelectorAll('tbody tr');
+var srows = sellpointtable.querySelectorAll('tbody tr');
+
+
+function updateconfig(){
+     profilesarray  = [];
+     sellarray = [];
+     prows = profilesTable.querySelectorAll('tbody tr');
+     srows = sellpointtable.querySelectorAll('tbody tr');
+prows.forEach(function(row) {
+    var cells = row.querySelectorAll('td');
+    if(cells[0].querySelector('input').value !==""){
+    var rowData = {};
+    rowData.price =  cells[0].querySelector('input').value;
+    rowData.time = cells[1].querySelector('input').value;
+    rowData.transfer = cells[2].querySelector('input').value;
+    rowData.validity = cells[3].querySelector('input').value;
+    profilesarray.push(rowData);
+    }
+});
+srows.forEach(function(row) {
+    var cells = row.querySelectorAll('td');
+    if(cells[0].querySelector('input').value !==""){
+    var rowData = {};
+    rowData.name =  cells[0].querySelector('input').value;
+    sellarray.push(rowData);
+    }
+});
+
+    const config = `Config({
+    "network-name": "${networkNameInput.value}",
+    "service-number": "${serviceNumberInput.value}",
+    "login-type": "${loginTypeInput.value}", 
+    "speed-select": ${speedSelectInput.value} ,
+    "speed-var":"${speedVarInput.value}",
+    "speed-option":\`${SpeedOptionInput.textContent}\`,
+    "news-line": \`${newsLineInput.value}\` ,
+    "input-autocomplete": "${inputAutocompleteInput.value}",
+    "input-type": "${inputTypeInput.value}",
+    "input-rm-white-spaces": ${inputRmWhiteSpacesInput.value},
+    "input-to-lower": 0,
+    "input-to-upper": 0,
+    "input-to-arabic-numbers": 1,
+    "input-only-numbers": 0,
+    "input-no-numbers": 0,
+    "input-only-alphanumeric": 0,
+    "enable-hot-cookie": 1 ,
+    "enable-hot-blocker": 1,
+    "clear-router-cookie": 1,
+    "clear-hot-cookie": 1,
+    "block-time": ${blockTimeInput.value},
+    "try-count": ${tryCountInput.value},
+    "warn-when": 3,
+    "warn-message": "تحذير !! عدد محاولاتك الخاطئة اصبح {{tryCounter}} محاولات, عدد المحاولات المسموح بها هي {{tryCount}} محاولات فقط, عدد محاولاتك المتبقية {{restTryCount}} محاولات, سيتم حظرك لمدة {{blockTime}} دقائق اذا تجاوزت العدد المسموح للمحاولات",
+    "price-button": ${priceButtonInput.value},
+    "sell-point-button": ${sellPointButtonInput.value},
+    "show-date-field": ${showDateFieldInput.value},
+    "loan-button": ${loanButtonInput.value},
+    "loan-text": \`${loanTextInput.value}\`,
+    "redirect-to-esterahah": "${redirectToEsterahahInput.value}",
+    "redirect-to-mobasher": "${redirectToMobasherInput.value}",
+    "profiles": ${JSON.stringify(profilesarray)} ,
+    "sell-points": ${JSON.stringify(sellarray)}
+})
+`;
+return config;
+
+}
+document.getElementById('config-form').addEventListener('change', function(event) {
+document.getElementById('iflogin').setAttribute('src','login/index.html');
+document.getElementById('ifstatus').setAttribute('src','status/index.html');
+});
+
+document.getElementById('iflogin').onload = function() {
+  document.getElementById('iflogin').contentWindow.postMessage(updateconfig(), '*');
+};
+
+document.getElementById('ifstatus').onload = function() {
+  document.getElementById('ifstatus').contentWindow.postMessage(updateconfig(), '*');
+};
+
+document.getElementById('config-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+   
+   // const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
+   // const fileUrl = URL.createObjectURL(fileBlob);
+
+  // const downloadLink = document.createElement('a');
+ //  downloadLink.href = fileUrl;
+  // downloadLink.download = 'config.js';
+  // downloadLink.click();
+
+const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
+const fileFormData = new FormData();
+fileFormData.append('file', fileBlob, 'config.js');
+
+fetch('save_file.php', {
+  method: 'POST',
+  body: fileFormData
+})
+.then(response => response.text())
+.then(response => {
+  console.log(response);
+})
+.catch(error => {
+  console.error(error);
+});
+
+
+});
+
+
+
+  var buttons = document.querySelectorAll('table button');
+
+buttons.forEach(function(button) {
+  button.addEventListener('click', function(event) {
+    var table = event.target.closest('table');
+    var tbody = table.querySelector('tbody');
+    var lastRow = tbody.lastElementChild;
+    var newRow = lastRow.cloneNode(true);
+    tbody.appendChild(newRow);
+  });
+});
+
+});
+
+</script>
+</html>
