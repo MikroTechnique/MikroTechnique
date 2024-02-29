@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
     <link href="prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./font/font.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="./font/font.css">
     <script>
      window.addEventListener('load', function() {
     setTimeout(function() {
@@ -256,6 +256,7 @@
 </div>
 
     <script src="prism.js"></script>
+    <script src="js/jszip.min.js"></script>
 
 <script>
 // عندما يتم تحميل الصفحة
@@ -270,6 +271,8 @@ const SpeedOptionInput = document.getElementById('speed-option');
 const newsLineInput = document.getElementById('news-line');
 const inputAutocompleteInput = document.getElementById('input-autocomplete');
 const inputTypeInput = document.getElementById('input-type');
+const inputtoupper = document.getElementById('input-to-upper');
+const inputtolower = document.getElementById('input-to-lower');
 const inputRmWhiteSpacesInput = document.getElementById('input-rm-white-spaces');
 const inputOnlyNumbersInput = document.getElementById('input-only-numbers');
 const inputNoNumbersInput = document.getElementById('input-no-numbers');
@@ -331,8 +334,8 @@ srows.forEach(function(row) {
     "input-autocomplete": "${inputAutocompleteInput.value}",
     "input-type": "${inputTypeInput.value}",
     "input-rm-white-spaces": ${inputRmWhiteSpacesInput.value},
-    "input-to-lower": 0,
-    "input-to-upper": 0,
+    "input-to-lower": ${inputtolower.value},
+    "input-to-upper": ${inputtoupper.value},
     "input-to-arabic-numbers": 1,
     "input-only-numbers": 0,
     "input-no-numbers": 0,
@@ -375,37 +378,46 @@ document.getElementById('ifstatus').onload = function() {
 document.getElementById('config-form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-   
-   // const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
-   // const fileUrl = URL.createObjectURL(fileBlob);
+    const zip = new JSZip();
+zip.file('config.js', updateconfig());
+zip.generateAsync({ type: 'blob' }).then((content) => {
+  const zipBlob = new Blob([content], { type: 'application/zip' });
+  const zipUrl = URL.createObjectURL(zipBlob);
+  const downloadLink = document.createElement('a');
+  downloadLink.href = zipUrl;
+  downloadLink.download = 'config.zip';
+  downloadLink.click();
+});
 
-  // const downloadLink = document.createElement('a');
- //  downloadLink.href = fileUrl;
-  // downloadLink.download = 'config.js';
-  // downloadLink.click();
+//    const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
+//    const fileUrl = URL.createObjectURL(fileBlob);
 
-const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
-const fileFormData = new FormData();
-fileFormData.append('file', fileBlob, 'config.js');
+//   const downloadLink = document.createElement('a');
+//   downloadLink.href = fileUrl;
+//   downloadLink.download = 'config.js';
+//   downloadLink.click();
 
-fetch('save_file.php', {
-  method: 'POST',
-  body: fileFormData
-})
-.then(response => response.text())
-.then(response => {
-  console.log(response);
-})
-.catch(error => {
-  console.error(error);
+// const fileBlob = new Blob([updateconfig()], { type: 'application/javascript' });
+// const fileFormData = new FormData();
+// fileFormData.append('file', fileBlob, 'config.js');
+
+// fetch('save_file.php', {
+//   method: 'POST',
+//   body: fileFormData
+// })
+// .then(response => response.text())
+// .then(response => {
+//   console.log(response);
+// })
+// .catch(error => {
+//   console.error(error);
+// });
+
 });
 
 
-});
 
-
-
-  var buttons = document.querySelectorAll('table button');
+var buttons = document.querySelectorAll('table button');
 
 buttons.forEach(function(button) {
   button.addEventListener('click', function(event) {
