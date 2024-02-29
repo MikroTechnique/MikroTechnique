@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
     <link href="prism.css" rel="stylesheet" />
@@ -12,12 +13,11 @@
     setTimeout(function() {
         var startpage = document.querySelector('.startpage');
         var logoimg = document.getElementById("logoimg");
-
         startpage.style.transitionDuration = '3s';
         startpage.style.opacity = '0';    
         setTimeout( function(){
         startpage.style.display= 'none'
-    },0); 
+    },3000); 
     }, 0);
 });
     </script>
@@ -26,8 +26,8 @@
 <body dir="rtl">
     <div class="background"></div>
     <div class="linergradinetbackground"></div>
-    <div class="startpage"> <div><img src="logo.png" alt=""><br><h1>ميكروتكنيك MikroTechnique </h1>
-        <h4> ميكروتكنيك لتصميم المواقع الإلكترونية و صفحات الهوت سبوت و تطبيقات الموبايل</h4>
+    <div class="startpage"> <div><img src="logo.png" alt=""><br><h1 style="opacity: 0;" id="test1">ميكروتكنيك MikroTechnique </h1>
+        <h4  id="test2" style="opacity: 0;" > ميكروتكنيك لتصميم المواقع الإلكترونية و صفحات الهوت سبوت و تطبيقات الموبايل</h4>
     </div></div>
     <div class="main" >
     <div class="editor">
@@ -254,7 +254,18 @@
         <div class="button3"></div>
     </div>
 </div>
-
+<script>
+    setTimeout(function(){
+        var h1 = document.getElementById('test1');
+        h1.style.transitionDuration = '3s';
+        h1.style.opacity = '1';       
+    },500)
+    setTimeout(function(){
+        var h2 = document.getElementById("test2");
+        h2.style.transitionDuration = '3s';
+        h2.style.opacity = '1';       
+    },1000)
+</script>
     <script src="prism.js"></script>
     <script src="js/jszip.min.js"></script>
 

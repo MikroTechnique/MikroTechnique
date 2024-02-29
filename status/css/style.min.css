@@ -72,7 +72,9 @@
 }
 
 body {
+    padding-top: 30px;
     direction: rtl;
+    height: 1000px;
     background: linear-gradient(160deg, #fff, #fe8a54)
 }
 
