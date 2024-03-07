@@ -2,7 +2,6 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Cairo" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
     <link href="prism.css" rel="stylesheet" />
@@ -17,7 +16,7 @@
         startpage.style.opacity = '0';    
         setTimeout( function(){
         startpage.style.display= 'none'
-    },3000); 
+    },0); 
     }, 0);
 });
     </script>
@@ -28,6 +27,10 @@
     <div class="linergradinetbackground"></div>
     <div class="startpage"> <div><img src="logo.png" alt=""><br><h1 style="opacity: 0;" id="test1">ميكروتكنيك MikroTechnique </h1>
         <h4  id="test2" style="opacity: 0;" > ميكروتكنيك لتصميم المواقع الإلكترونية و صفحات الهوت سبوت و تطبيقات الموبايل</h4>
+        <br>
+        <h5>أنتظر قليلا  حتى  اكتمال التحميل. . .</h5>
+        <br>
+        <img style="width: 50px;" src="loading-svgrepo-com.svg" alt="">
     </div></div>
     <div class="main" >
     <div class="editor">
@@ -48,7 +51,14 @@
         <div class="form">
     <form id="config-form">
         <input type="checkbox" name="" id="advanced">
-        <label for="advanced">الوضع المتقدم</label><br>
+        <label for="advanced">الوضع المتقدم</label>
+
+        <select id="page">
+          <option value="" > صفحة مجانية  1</option>
+          <option value=""  selected >  الصفحة الرمضانية</option>
+        </select>
+        
+        <br>
         <label for="network-name">اسم الشبكة:</label>
         <input value="ميكروتكنيك" type="text" name="network-name" id="network-name"><br>
         <label for="service-number">رقم الخدمة:</label>
@@ -68,7 +78,7 @@
         </select>
         <div class="advanced" id="sv">
             <label  for="speed-var"> أسم متغير تحديد السرعة :</label>
-            <input value="domain" type="text" name="speed-var" id="speed-var">
+            <input value="speed" type="text" name="speed-var" id="speed-var">
             <br>
             <label for="speed-option"> كود خيارات السرعة :</label><br>  
             <pre dir="ltr" id="speed-option" contenteditable class="language-html" data-linenumber="0">   
@@ -238,7 +248,7 @@
     </form></div></div>
     <div class="loginpage">
         
-        <iframe id="iflogin" src="login/index.html" frameborder="0"></iframe>
+        <iframe id="iflogin" src="ramdan/login/index.html" frameborder="0"></iframe>
         <div class="camira"></div>
         <div class="button1"></div>
         <div class="button2"></div>
@@ -246,7 +256,7 @@
         <div class="button3"></div>
     </div>
     <div class="statuspage">
-        <iframe id="ifstatus" src="status/index.html" frameborder="0"></iframe>
+        <iframe id="ifstatus" src="ramdan/status/index.html" frameborder="0"></iframe>
         <div class="camira"></div>
         <div class="button1"></div>
         <div class="button2"></div>
@@ -272,7 +282,7 @@
 <script>
 // عندما يتم تحميل الصفحة
 window.addEventListener('DOMContentLoaded', (event) => {
-document.getElementById('speed-option').innerHTML=`<div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span> <span style="color: #9cdcfe;">selected</span> <span style="color: #9cdcfe;">disabled</span> <span style="color: #9cdcfe;">hidden</span><span style="color: #808080;">&gt;</span>أختيار سرعة الإنترنت<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span> <span style="color: #808080;">&gt;</span>سرعة أفتراضية <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"128K/512K"</span><span style="color: #808080;">&gt;</span>سرعة منخفضة 512 <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"256K/1024K"</span><span style="color: #808080;">&gt;</span>سرعة عادية 1 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"512K/2048K"</span><span style="color: #808080;">&gt;</span>سرعة متوسطة 2 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"1024K/4096K"</span><span style="color: #808080;">&gt;</span>سرعة عالية جدا 4 ميجا<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div></div>`;
+document.getElementById('speed-option').innerHTML=`<div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">""</span> <span style="color: #9cdcfe;">selected</span> <span style="color: #9cdcfe;">disabled</span> <span style="color: #9cdcfe;">hidden</span><span style="color: #808080;">&gt;</span>أختيار سرعة الإنترنت<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><div style="font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px;"><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"55987b0d-ca6d-464f-93c8-db9ac5a0800b"</span> <span style="color: #808080;">&gt;</span>سرعة &nbsp;منخفضة <span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"55987b0d-ca6d-464f-93c8-db9ac5a0800a"</span> <span style="color: #9cdcfe;">selected</span><span style="color: #808080;">&gt;</span>سرعة متوسطة<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div><div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">option</span> <span style="color: #9cdcfe;">value</span>=<span style="color: #ce9178;">"55987b0d-ca6d-464f-93c8-db9ac5a0800f"</span><span style="color: #808080;">&gt;</span>سرعة &nbsp;عالية<span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">option</span><span style="color: #808080;">&gt;</span></div></div></div></div>`;
 const networkNameInput = document.getElementById('network-name');
 const serviceNumberInput = document.getElementById('service-number');
 const loginTypeInput = document.getElementById('login-type');
@@ -374,8 +384,14 @@ return config;
 
 }
 document.getElementById('config-form').addEventListener('change', function(event) {
+if(document.getElementById('page').selectedIndex ==0){
 document.getElementById('iflogin').setAttribute('src','login/index.html');
 document.getElementById('ifstatus').setAttribute('src','status/index.html');
+}
+else if(document.getElementById('page').selectedIndex ==1){
+document.getElementById('iflogin').setAttribute('src','ramdan/login/index.html');
+document.getElementById('ifstatus').setAttribute('src','ramdan/status/index.html'); 
+}
 });
 
 document.getElementById('iflogin').onload = function() {
@@ -389,14 +405,18 @@ document.getElementById('ifstatus').onload = function() {
 document.getElementById('config-form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const zip = new JSZip();
+const zip = new JSZip();
 zip.file('config.js', updateconfig());
+
+const additionalContent = 'لمعرفة طريقة  استخدام الملف شاهد الفيديو  على  الرابط  التالي  ';
+zip.file('شرح_الأستخدام.txt', additionalContent);
+
 zip.generateAsync({ type: 'blob' }).then((content) => {
   const zipBlob = new Blob([content], { type: 'application/zip' });
   const zipUrl = URL.createObjectURL(zipBlob);
   const downloadLink = document.createElement('a');
   downloadLink.href = zipUrl;
-  downloadLink.download = 'config.zip';
+  downloadLink.download = 'ملف الأعدادات.zip';
   downloadLink.click();
 });
 
