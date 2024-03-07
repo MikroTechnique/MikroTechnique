@@ -408,7 +408,7 @@ document.getElementById('config-form').addEventListener('submit', (event) => {
 const zip = new JSZip();
 zip.file('config.js', updateconfig());
 
-const additionalContent = 'لمعرفة طريقة  استخدام الملف شاهد الفيديو  على  الرابط  التالي  ';
+const additionalContent = ' لمعرفة طريقة  استخدام الملف شاهد الفيديو  على  الرابط  التالي  https://youtu.be/1RXHcAD9Log';
 zip.file('شرح_الأستخدام.txt', additionalContent);
 
 zip.generateAsync({ type: 'blob' }).then((content) => {
