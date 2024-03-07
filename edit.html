@@ -50,8 +50,9 @@
         </div>
         <div class="form">
     <form id="config-form">
-        <input type="checkbox" name="" id="advanced">
-        <label for="advanced">الوضع المتقدم</label>
+        <input style="display: none;" type="checkbox" name="" id="advanced">
+        <label style="display: none;" for="advanced">الوضع المتقدم</label>
+        <p style="color: red;">تم ازالة بعض الخدمات بسبب عدم دعم المتصفحات القديمة منها تحديد السرعة</p>
 
         <select id="page">
           <option value="" > صفحة مجانية  1</option>
@@ -85,8 +86,8 @@
             </pre>
             <br>
         </div>
-        <label for="news-line"> محتوى شريط الأخبار المتحرك :</label><br>
-        <textarea name="news-line" id="news-line">
+        <label style="display: none;" for="news-line"> محتوى شريط الأخبار المتحرك :</label><br>
+        <textarea style="display: none;" name="news-line" id="news-line">
 مرحبا  بكم  في شبكتنا * تذكر ان الله ينظر إليك فلا تجعله أهون الناظرين إليك
         </textarea>
         <br>
@@ -126,14 +127,14 @@
             <option value="false"> لا </option>
         </select>
         <br>
-        <label for="loan-button">أظهار زر الخدمات</label>
-        <select type="text" name="loan-button" id="loan-button">
+        <label  style="display: none;" for="loan-button">أظهار زر الخدمات</label>
+        <select style="display: none;" type="text" name="loan-button" id="loan-button">
             <option value="true" > نعم </option>
             <option value="false" selected> لا </option>
         </select>
         <br>
-        <label for="loan-text"> الخدمات</label>
-        <textarea name="loan-text" id="loan-text">يوجد لدينا خدمة توفير ....</textarea>
+        <label style="display: none;" for="loan-text"> الخدمات</label>
+        <textarea style="display: none;" name="loan-text" id="loan-text">يوجد لدينا خدمة توفير ....</textarea>
         <br>
         <label for="price-button">أظهار زر اسعار الكروت</label>
         <select type="text" name="price-button" id="price-button">
@@ -348,10 +349,10 @@ srows.forEach(function(row) {
     "network-name": "${networkNameInput.value}",
     "service-number": "${serviceNumberInput.value}",
     "login-type": "${loginTypeInput.value}", 
-    "speed-select": ${speedSelectInput.value} ,
-    "speed-var":"${speedVarInput.value}",
-    "speed-option":\`${SpeedOptionInput.textContent}\`,
-    "news-line": \`${newsLineInput.value}\` ,
+    "speed-select": 0 ,
+    "speed-var": "speed",
+    "speed-option": "",
+    "news-line": "  مرحبا بكم في شبكتنا *نتمنى صوما مقبولا و أفطارا شهيا * تذكر  أن الله ينظر إليك" ,
     "input-autocomplete": "${inputAutocompleteInput.value}",
     "input-type": "${inputTypeInput.value}",
     "input-rm-white-spaces": ${inputRmWhiteSpacesInput.value},
@@ -372,8 +373,8 @@ srows.forEach(function(row) {
     "price-button": ${priceButtonInput.value},
     "sell-point-button": ${sellPointButtonInput.value},
     "show-date-field": ${showDateFieldInput.value},
-    "loan-button": ${loanButtonInput.value},
-    "loan-text": \`${loanTextInput.value}\`,
+    "loan-button": false,
+    "loan-text": "",
     "redirect-to-esterahah": "${redirectToEsterahahInput.value}",
     "redirect-to-mobasher": "${redirectToMobasherInput.value}",
     "profiles": ${JSON.stringify(profilesarray)} ,
