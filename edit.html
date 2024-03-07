@@ -86,10 +86,8 @@
             </pre>
             <br>
         </div>
-        <label style="display: none;" for="news-line"> محتوى شريط الأخبار المتحرك :</label><br>
-        <textarea style="display: none;" name="news-line" id="news-line">
-مرحبا  بكم  في شبكتنا * تذكر ان الله ينظر إليك فلا تجعله أهون الناظرين إليك
-        </textarea>
+        <label for="news-line"> محتوى شريط الأخبار المتحرك :</label><br>
+        <input value="مرحبا  بكم  في شبكتنا * تذكر ان الله ينظر إليك فلا تجعله أهون الناظرين إليك" type="text" name="news-line" id="news-line">
         <br>
         <label for="input-autocomplete">أكمال تلقائي بالمتصفح</label>
         <select type="text" name="input-autocomplete" id="input-autocomplete">
@@ -127,15 +125,14 @@
             <option value="false"> لا </option>
         </select>
         <br>
-        <label  style="display: none;" for="loan-button">أظهار زر الخدمات</label>
-        <select style="display: none;" type="text" name="loan-button" id="loan-button">
+        <label  for="loan-button">أظهار زر الخدمات</label>
+        <select type="text" name="loan-button" id="loan-button">
             <option value="true" > نعم </option>
             <option value="false" selected> لا </option>
         </select>
         <br>
-        <label style="display: none;" for="loan-text"> الخدمات</label>
-        <textarea style="display: none;" name="loan-text" id="loan-text">يوجد لدينا خدمة توفير ....</textarea>
-        <br>
+        <label  for="loan-text"> الخدمات</label>
+        <input type="text" value="يتوفر لدينا خدمة ..." name="loan-text" id="loan-text"/><br>
         <label for="price-button">أظهار زر اسعار الكروت</label>
         <select type="text" name="price-button" id="price-button">
             <option value="true" selected> نعم </option>
@@ -352,7 +349,7 @@ srows.forEach(function(row) {
     "speed-select": 0 ,
     "speed-var": "speed",
     "speed-option": "",
-    "news-line": "  مرحبا بكم في شبكتنا *نتمنى صوما مقبولا و أفطارا شهيا * تذكر  أن الله ينظر إليك" ,
+    "news-line": "${newsLineInput.value}" ,
     "input-autocomplete": "${inputAutocompleteInput.value}",
     "input-type": "${inputTypeInput.value}",
     "input-rm-white-spaces": ${inputRmWhiteSpacesInput.value},
@@ -373,8 +370,8 @@ srows.forEach(function(row) {
     "price-button": ${priceButtonInput.value},
     "sell-point-button": ${sellPointButtonInput.value},
     "show-date-field": ${showDateFieldInput.value},
-    "loan-button": false,
-    "loan-text": "",
+    "loan-button": ${loanButtonInput.value},
+    "loan-text": "${loanTextInput.value}",
     "redirect-to-esterahah": "${redirectToEsterahahInput.value}",
     "redirect-to-mobasher": "${redirectToMobasherInput.value}",
     "profiles": ${JSON.stringify(profilesarray)} ,
