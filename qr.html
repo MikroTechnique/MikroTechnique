@@ -4820,11 +4820,11 @@ const uURL= urlParams.get('redirect_url');
                     scanner.addListener('scan', function (content) {
                         app.qrData = content;
 
-                        if (app.qrData.toLowerCase().startsWith('http://') || app.qrData.toLowerCase().startsWith('https://')) {
-                            window.location.href = app.qrData;
-                        }
+                        // if (app.qrData.toLowerCase().startsWith('http://') || app.qrData.toLowerCase().startsWith('https://')) {
+                        //     window.location.href = app.qrData;
+                        // }
 
-                        else {
+                        // else {
 
                             // Redirect back to the previous page with ?username=qrscan in the URL
                             if (uURL != "") {
@@ -4833,12 +4833,12 @@ const uURL= urlParams.get('redirect_url');
 
                                 let finalUrl = `${uURL}?username=${content}` ;
                                 console.log(finalUrl) 
-                               // window.location.href = finalUrl; 
+                                window.location.href = finalUrl; 
                             } else{
                                 window.location.href = 'http://10.0.0.1/login?username=' + content; 
                             }
 
-                        }
+                        // }
                     });
 
                     Instascan.Camera.getCameras().then(function (cameras) {
@@ -4867,4 +4867,3 @@ const uURL= urlParams.get('redirect_url');
 </body>
 
 </html>
-
