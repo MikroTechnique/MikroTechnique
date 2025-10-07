@@ -4721,6 +4721,27 @@
                 </div>
             </div>
         </div>
+        <div id="done" style="display: none;"
+            class="relative overflow-hidden glass-premium shadow-glass hover-lift animate-fade-in rounded-card-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 p-6 hover:shadow-accent mb-6">
+            <div class="text-center">
+                <div class="space-y-4">
+                    <div
+                        class="w-20 h-20 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto shadow-glow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-camera h-10 w-10 text-white">
+                            <path
+                                d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z">
+                            </path>
+                            <circle cx="12" cy="13" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-bold text-text-primary">رقم الكرت  : <span id="number"></span></h2>
+                    <p class="text-sm text-text-secondary">جاري التوجية ....</p>
+
+                </div>
+            </div>
+        </div>
 
         <div id="scan"
             class="relative overflow-hidden glass-premium shadow-glass hover-lift animate-fade-in rounded-card-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 p-6 hover:shadow-accent mb-6">
@@ -4792,11 +4813,11 @@
     <script>
 
 
-const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(window.location.search);
 
-const uURL= urlParams.get('redirect_url');
+        const uURL = urlParams.get('redirect_url');
 
-
+console.log(uURL)
 
         document.getElementById('startscan').addEventListener("click", function () {
             document.getElementById("scan").style.display = "none";
@@ -4820,25 +4841,35 @@ const uURL= urlParams.get('redirect_url');
                     scanner.addListener('scan', function (content) {
                         app.qrData = content;
 
-                        // if (app.qrData.toLowerCase().startsWith('http://') || app.qrData.toLowerCase().startsWith('https://')) {
-                        //     window.location.href = app.qrData;
-                        // }
+                        if (app.qrData.toLowerCase().startsWith('http://')) {
+                            window.location.href = content;
+                            document.getElementById("scanner").style.display = "none";
 
-                        // else {
+                        }
+
+                        else {
+                            
+                                document.getElementById("scanner").style.display = "none";
+                                document.getElementById("done").style.display = "block";
+                                document.getElementById("number").innerText = content ;
 
                             // Redirect back to the previous page with ?username=qrscan in the URL
-                            if (uURL != "") {
+                            if (uURL) {
                                 // let baseUrl = app.redirectUrl.replace(/\/+$/, '');
                                 // let separator = baseUrl.includes('?') ? '&' : '?';
+                                
 
-                                let finalUrl = `${uURL}?username=${content}` ;
-                                console.log(finalUrl) 
-                                window.location.href = finalUrl; 
-                            } else{
-                                window.location.href = 'http://10.0.0.1/login?username=' + content; 
+
+                                let finalUrl = `${uURL}?username=${content}`;
+                                console.log(finalUrl)
+                                window.location.href = finalUrl;
+                            } else {
+                                
+                                console.log("to defualt url")
+                                window.location.href = 'http://10.0.0.1/login?username=' + content;
                             }
 
-                        // }
+                        }
                     });
 
                     Instascan.Camera.getCameras().then(function (cameras) {
