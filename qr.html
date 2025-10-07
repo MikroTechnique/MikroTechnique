@@ -4791,6 +4791,13 @@
     </div>
     <script>
 
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const uURL= urlParams.get('redirect_url');
+
+
+
         document.getElementById('startscan').addEventListener("click", function () {
             document.getElementById("scan").style.display = "none";
             document.getElementById("scanner").style.display = "block";
@@ -4813,7 +4820,6 @@
                     scanner.addListener('scan', function (content) {
                         app.qrData = content;
 
-                        // Check if the QR data starts with http:// or https:// (isURL)
                         if (app.qrData.toLowerCase().startsWith('http://') || app.qrData.toLowerCase().startsWith('https://')) {
                             window.location.href = app.qrData;
                         }
@@ -4821,39 +4827,20 @@
                         else {
 
                             // Redirect back to the previous page with ?username=qrscan in the URL
-                            if (app.redirectUrl) {
-                                let baseUrl = app.redirectUrl.replace(/\/+$/, '');
-                                let separator = baseUrl.includes('?') ? '&' : '?';
+                            if (uURL != "") {
+                                // let baseUrl = app.redirectUrl.replace(/\/+$/, '');
+                                // let separator = baseUrl.includes('?') ? '&' : '?';
 
-                                let finalUrl = `$ {
-            baseUrl
-          }
-
-          $ {
-            separator
-          }
-
-          username=$ {
-            app.qrData
-          }
-
-          `;
-                                // let finalUrl = `${baseUrl}?username=` + app.qrData;
-                                window.location.href = finalUrl;
+                                let finalUrl = `${uURL}?username=${content}` ;
+                                console.log(finalUrl) 
+                                window.location.href = finalUrl; 
+                            } else{
+                                window.location.href = 'http://10.0.0.1/login?username=' + content; 
                             }
 
                         }
                     });
 
-                    scanner.addListener('active', function () {
-                        document.getElementById('preview').classList.add('qr-found'); // Add class when QR code is detected
-                    });
-
-                    scanner.addListener('inactive', function () {
-                        document.getElementById('preview').classList.remove('qr-found'); // Remove class when QR code is lost
-                    });
-
-                    // Find the back camera
                     Instascan.Camera.getCameras().then(function (cameras) {
                         let selectedCamera = cameras.find(camera => camera.name.toLowerCase().includes('back'));
 
