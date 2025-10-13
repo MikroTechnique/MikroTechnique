@@ -4642,7 +4642,7 @@
             <div
                 class="glass-premium hover-lift animate-fade-in rounded-card-xl border-2 border-primary/20 shadow-glow p-6 hover:shadow-glow text-center relative overflow-hidden">
                
-                    <button onclick="window.history.back();"
+                    <button id="back"
                         class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 ease-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 glass-premium text-text-primary hover:shadow-button hover:scale-[1.02] active:scale-[0.98] hover-lift h-12 w-12 rounded-card absolute right-3 top-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -4815,7 +4815,10 @@
 
         const uURL = urlParams.get('redirect_url');
 
-console.log(uURL)
+document.getElementById("back").onclick = function(){
+    window.location.href = uURL;
+}
+
 
         document.getElementById('startscan').addEventListener("click", function () {
             document.getElementById("scan").style.display = "none";
@@ -4896,6 +4899,7 @@ console.log(uURL)
 </body>
 
 </html>
+
 
 
 
