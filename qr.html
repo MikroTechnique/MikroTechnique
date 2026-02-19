@@ -4818,6 +4818,7 @@
         const uURL = urlParams.get('redirect_url');
 
          const type = urlParams.get('t');
+         console.log(type)
 
 document.getElementById("back").onclick = function(){
     window.location.href = uURL;
@@ -4867,9 +4868,9 @@ document.getElementById("back").onclick = function(){
 
                                 let finalUrl = `${uURL}?username=${content}`;
                                 console.log(finalUrl)
-                                 
+                                console.log(type);
                                 if(type === "s")
-                                window.location.href = finalUrl + '&password=' + content;
+                                window.location.href = (finalUrl + '&password=' + content);
                                 else
                                 window.location.href = finalUrl;
 
