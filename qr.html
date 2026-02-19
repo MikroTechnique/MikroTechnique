@@ -4817,6 +4817,8 @@
 
         const uURL = urlParams.get('redirect_url');
 
+         const type = urlParams.get('t');
+
 document.getElementById("back").onclick = function(){
     window.location.href = uURL;
 }
@@ -4869,7 +4871,11 @@ document.getElementById("back").onclick = function(){
                             } else {
                                 
                                 console.log("to defualt url")
+                                if(type != "s")
                                 window.location.href = 'http://10.0.0.1/login?username=' + content;
+                                else
+                                window.location.href = 'http://10.0.0.1/login?username=' + content + '&password=' + content;
+                                    
                             }
 
                         }
@@ -4901,6 +4907,7 @@ document.getElementById("back").onclick = function(){
 </body>
 
 </html>
+
 
 
 
