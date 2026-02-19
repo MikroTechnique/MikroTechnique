@@ -4867,14 +4867,17 @@ document.getElementById("back").onclick = function(){
 
                                 let finalUrl = `${uURL}?username=${content}`;
                                 console.log(finalUrl)
+                                 
+                                if(type === "s")
+                                window.location.href = finalUrl + '&password=' + content;
+                                else
                                 window.location.href = finalUrl;
+
+
                             } else {
                                 
                                 console.log("to defualt url")
-                                if(type != "s")
                                 window.location.href = 'http://10.0.0.1/login?username=' + content;
-                                else
-                                window.location.href = 'http://10.0.0.1/login?username=' + content + '&password=' + content;
                                     
                             }
 
